@@ -23,4 +23,4 @@ function aleatoire(){
 
 }
 
-function afficher
+aleatoire()

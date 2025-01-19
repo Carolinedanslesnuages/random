@@ -1,7 +1,6 @@
-// Fonction pour afficher une citation aléatoire
-function afficherCitationAleatoire() {
-  // Liste des citations
-  const citations = [
+
+function displayRandomQuote(): void {
+  const quotes: string[] = [
     "Dieu est amour mais l’amour est classé X. - Guy Bedos",
     "Le silence oblitère tout. - Paul Austère",
     "Le silence est un aveu. - Euripide",
@@ -16,18 +15,15 @@ function afficherCitationAleatoire() {
     "Le mieux serait que tu me demandes ce que tu veux savoir. Et si tu es perplexe que tu ne sais pas ce que tu dois me demander parce que tu ne sais pas ce que tu veux savoir, demande-moi autre chose. - Daniel Glattauer"
   ];
 
-  // Génération d'un index aléatoire
-  const indexAleatoire = Math.floor(Math.random() * citations.length);
+  const randomIndex: number = Math.floor(Math.random() * quotes.length);
 
-  // Sélection de l'élément cible
-  const elementCitation = document.getElementById("citation");
+  const quoteElement: HTMLElement | null = document.getElementById("citation");
 
-  // Vérification si l'élément existe avant de modifier son contenu
-  if (elementCitation) {
-    elementCitation.innerHTML = citations[indexAleatoire];
+  if (quoteElement) {
+    quoteElement.innerHTML = quotes[randomIndex];
   } else {
-    console.error("L'élément avec l'ID 'citation' est introuvable.");
+    console.error("The element with ID 'citation' was not found.");
   }
 }
 
-afficherCitationAleatoire();
+displayRandomQuote();
